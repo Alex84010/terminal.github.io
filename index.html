@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Terminal game</title>
+<title>HACK TERMINAL</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=VT323&display=swap');
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -17,7 +17,7 @@
 }
 html,body{height:100%;background:var(--bg);color:var(--green);font-family:'Share Tech Mono',monospace;overflow-x:hidden}
 body::before{content:'';position:fixed;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,0.12) 2px,rgba(0,0,0,0.12) 4px);pointer-events:none;z-index:9999}
-@keyframes flicker{0%,100%{opacity:1}93%{opacity:0.85}94%{opacity:1}97%{opacity:0.9}}
+@keyframes flicker{0%,100%{opacity:1}93%{opacity:.85}94%{opacity:1}97%{opacity:.9}}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
 @keyframes glitch{0%,100%{transform:translate(0);clip-path:none}20%{transform:translate(-2px,1px);clip-path:inset(20% 0 60% 0)}40%{transform:translate(2px,-1px);clip-path:inset(60% 0 20% 0)}60%{transform:translate(0);clip-path:none}}
 @keyframes scandown{0%{top:-10%}100%{top:110%}}
@@ -25,58 +25,58 @@ body::before{content:'';position:fixed;inset:0;background:repeating-linear-gradi
 @keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
 @keyframes shake{0%,100%{transform:translateX(0)}20%{transform:translateX(-6px)}40%{transform:translateX(6px)}60%{transform:translateX(-4px)}80%{transform:translateX(4px)}}
 body{animation:flicker 8s infinite}
-.scan-sweep{position:fixed;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--green-dim),transparent);opacity:0.25;animation:scandown 6s linear infinite;pointer-events:none;z-index:9998}
+.scan-sweep{position:fixed;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--green-dim),transparent);opacity:.25;animation:scandown 6s linear infinite;pointer-events:none;z-index:9998}
 #app{min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:20px 16px 40px}
 .header{text-align:center;margin-bottom:24px}
 .header h1{font-family:'VT323',monospace;font-size:clamp(2.5rem,7vw,4.5rem);color:var(--green);text-shadow:var(--glow);letter-spacing:8px;line-height:1}
-.header h1.glitch{animation:glitch 0.3s steps(2) infinite}
-.header .subtitle{font-size:0.7rem;color:var(--green-dim);letter-spacing:4px;margin-top:6px}
-.header .version{font-size:0.55rem;color:#1a4a1a;letter-spacing:2px;margin-top:2px}
-.panel{background:var(--panel);border:1px solid var(--border);padding:22px;width:100%;max-width:500px;position:relative;animation:fadeIn 0.4s ease}
+.header h1.glitch{animation:glitch .3s steps(2) infinite}
+.header .subtitle{font-size:.7rem;color:var(--green-dim);letter-spacing:4px;margin-top:6px}
+.header .version{font-size:.55rem;color:#1a4a1a;letter-spacing:2px;margin-top:2px}
+.panel{background:var(--panel);border:1px solid var(--border);padding:22px;width:100%;max-width:500px;position:relative;animation:fadeIn .4s ease}
 .panel::before{content:'';position:absolute;top:-1px;left:20px;right:20px;height:1px;background:linear-gradient(90deg,transparent,var(--green),transparent)}
-.panel-title{font-size:0.6rem;color:var(--green-dim);letter-spacing:3px;margin-bottom:14px;border-bottom:1px solid var(--border);padding-bottom:8px}
-.btn{background:transparent;border:1px solid var(--green-dim);color:var(--green);font-family:'Share Tech Mono',monospace;font-size:0.82rem;padding:10px 20px;cursor:pointer;letter-spacing:2px;transition:all 0.15s;position:relative;overflow:hidden;width:100%;margin-top:10px}
-.btn::before{content:'';position:absolute;inset:0;background:var(--green);transform:translateX(-105%);transition:transform 0.2s;z-index:-1}
+.panel-title{font-size:.6rem;color:var(--green-dim);letter-spacing:3px;margin-bottom:14px;border-bottom:1px solid var(--border);padding-bottom:8px}
+.btn{background:transparent;border:1px solid var(--green-dim);color:var(--green);font-family:'Share Tech Mono',monospace;font-size:.82rem;padding:10px 20px;cursor:pointer;letter-spacing:2px;transition:all .15s;position:relative;overflow:hidden;width:100%;margin-top:10px}
+.btn::before{content:'';position:absolute;inset:0;background:var(--green);transform:translateX(-105%);transition:transform .2s;z-index:-1}
 .btn:hover{color:var(--bg);border-color:var(--green);box-shadow:var(--glow)}
 .btn:hover::before{transform:translateX(0)}
-.btn:active{transform:scale(0.98)}
-.btn:disabled{opacity:0.3;cursor:not-allowed;pointer-events:none}
-.input{background:var(--green-dark);border:1px solid var(--green-dim);color:var(--green);font-family:'Share Tech Mono',monospace;font-size:1rem;padding:10px 14px;width:100%;outline:none;letter-spacing:2px;transition:border-color 0.2s,box-shadow 0.2s}
+.btn:active{transform:scale(.98)}
+.btn:disabled{opacity:.3;cursor:not-allowed;pointer-events:none}
+.input{background:var(--green-dark);border:1px solid var(--green-dim);color:var(--green);font-family:'Share Tech Mono',monospace;font-size:1rem;padding:10px 14px;width:100%;outline:none;letter-spacing:2px;transition:border-color .2s,box-shadow .2s}
 .input:focus{border-color:var(--green);box-shadow:var(--glow)}
 .input::placeholder{color:#1a4a1a}
-label{font-size:0.65rem;color:var(--green-dim);letter-spacing:2px;display:block;margin-bottom:6px;margin-top:12px}
+label{font-size:.65rem;color:var(--green-dim);letter-spacing:2px;display:block;margin-bottom:6px;margin-top:12px}
 label:first-child{margin-top:0}
-.status-bar{width:100%;max-width:500px;border:1px solid var(--border);padding:7px 12px;font-size:0.65rem;color:var(--green-dim);letter-spacing:1px;margin-bottom:10px;display:flex;align-items:center;gap:8px;background:var(--panel)}
+.status-bar{width:100%;max-width:500px;border:1px solid var(--border);padding:7px 12px;font-size:.65rem;color:var(--green-dim);letter-spacing:1px;margin-bottom:10px;display:flex;align-items:center;gap:8px;background:var(--panel)}
 .status-dot{width:6px;height:6px;border-radius:50%;background:var(--green-dim);animation:blink 1.5s infinite;flex-shrink:0}
 .status-dot.active{background:var(--green);animation:none}
-.status-dot.red{background:var(--red);animation:blink 0.5s infinite}
+.status-dot.red{background:var(--red);animation:blink .5s infinite}
 .room-code-box{background:var(--green-dark);border:1px solid var(--green);padding:14px;text-align:center;margin:14px 0;box-shadow:var(--glow);animation:pulse-border 2s infinite}
 .room-code-box .code{font-family:'VT323',monospace;font-size:3.5rem;color:var(--green);letter-spacing:14px;text-shadow:var(--glow)}
-.room-code-box .lbl{font-size:0.55rem;color:var(--green-dim);letter-spacing:3px}
+.room-code-box .lbl{font-size:.55rem;color:var(--green-dim);letter-spacing:3px}
 .waiting{display:inline-flex;gap:4px;align-items:center}
 .waiting span{display:inline-block;width:5px;height:5px;background:var(--green-dim);border-radius:50%}
 .waiting span:nth-child(1){animation:blink 1s infinite 0s}
-.waiting span:nth-child(2){animation:blink 1s infinite 0.3s}
-.waiting span:nth-child(3){animation:blink 1s infinite 0.6s}
+.waiting span:nth-child(2){animation:blink 1s infinite .3s}
+.waiting span:nth-child(3){animation:blink 1s infinite .6s}
 #game-area{width:100%;max-width:1100px;display:none}
 .game-grid{display:grid;grid-template-columns:1fr auto 1fr;gap:14px;align-items:start}
 .player-panel{border:1px solid var(--border);background:var(--panel);padding:14px;position:relative}
 .player-panel.active-turn{border-color:var(--green);box-shadow:var(--glow)}
-.player-panel.active-turn::after{content:'◄ TON TOUR';position:absolute;bottom:-1px;left:0;right:0;background:var(--green);color:var(--bg);font-size:0.55rem;letter-spacing:3px;text-align:center;padding:3px}
+.player-panel.active-turn::after{content:'◄ TON TOUR';position:absolute;bottom:-1px;left:0;right:0;background:var(--green);color:var(--bg);font-size:.55rem;letter-spacing:3px;text-align:center;padding:3px}
 .player-panel.enemy-panel.active-turn::after{content:'ENNEMI EN ACTION ►'}
 .player-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid var(--border)}
 .player-name{font-family:'VT323',monospace;font-size:1.3rem;letter-spacing:2px}
 .player-name.you{color:var(--cyan);text-shadow:var(--glow-cyan)}
 .player-name.enemy{color:var(--red);text-shadow:var(--glow-red)}
-.hp-bar-wrap{display:flex;align-items:center;gap:5px;font-size:0.6rem;color:var(--green-dim)}
+.hp-bar-wrap{display:flex;align-items:center;gap:5px;font-size:.6rem;color:var(--green-dim)}
 .hp-bar{width:70px;height:7px;background:var(--green-dark);border:1px solid var(--border);overflow:hidden}
-.hp-fill{height:100%;background:var(--green);transition:width 0.5s}
+.hp-fill{height:100%;background:var(--green);transition:width .5s}
 .hp-fill.low{background:var(--yellow)}
 .hp-fill.critical{background:var(--red)}
-.history{height:240px;overflow-y:auto;font-size:0.72rem;line-height:1.8;scrollbar-width:thin;scrollbar-color:var(--green-dim) transparent}
+.history{height:240px;overflow-y:auto;font-size:.72rem;line-height:1.8;scrollbar-width:thin;scrollbar-color:var(--green-dim) transparent}
 .history::-webkit-scrollbar{width:3px}
 .history::-webkit-scrollbar-thumb{background:var(--green-dim)}
-.history-entry{display:flex;gap:8px;animation:fadeIn 0.3s ease;padding:2px 0;border-bottom:1px solid #0a1a0a;align-items:center}
+.history-entry{display:flex;gap:8px;animation:fadeIn .3s ease;padding:2px 0;border-bottom:1px solid #0a1a0a;align-items:center}
 .history-entry .attempt{color:var(--cyan);letter-spacing:3px}
 .history-entry.enemy-entry .attempt{color:var(--red)}
 .history-entry .idx{color:#1a4a1a;min-width:20px}
@@ -87,27 +87,27 @@ label:first-child{margin-top:0}
 .dot.wrong{background:#111;border-color:#222}
 .input-area{margin-top:10px;padding-top:10px;border-top:1px solid var(--border)}
 .code-inputs{display:flex;gap:7px;justify-content:center;margin-bottom:8px}
-.code-char{width:46px;height:54px;background:var(--green-dark);border:1px solid var(--green-dim);color:var(--green);font-family:'VT323',monospace;font-size:2rem;text-align:center;outline:none;text-transform:uppercase;transition:border-color 0.15s,box-shadow 0.15s;caret-color:var(--green)}
+.code-char{width:46px;height:54px;background:var(--green-dark);border:1px solid var(--green-dim);color:var(--green);font-family:'VT323',monospace;font-size:2rem;text-align:center;outline:none;text-transform:uppercase;transition:border-color .15s,box-shadow .15s;caret-color:var(--green)}
 .code-char:focus{border-color:var(--green);box-shadow:var(--glow)}
 .middle-panel{display:flex;flex-direction:column;align-items:center;gap:10px;padding-top:40px}
 .vs-text{font-family:'VT323',monospace;font-size:2.8rem;color:var(--red);text-shadow:var(--glow-red);animation:blink 2s infinite}
-.turn-counter{font-size:0.6rem;color:var(--green-dim);letter-spacing:2px;text-align:center}
-.timer-ring{width:58px;height:58px;border-radius:50%;border:2px solid var(--border);display:flex;align-items:center;justify-content:center;font-family:'VT323',monospace;font-size:1.8rem;color:var(--green);transition:all 0.3s}
+.turn-counter{font-size:.6rem;color:var(--green-dim);letter-spacing:2px;text-align:center}
+.timer-ring{width:58px;height:58px;border-radius:50%;border:2px solid var(--border);display:flex;align-items:center;justify-content:center;font-family:'VT323',monospace;font-size:1.8rem;color:var(--green);transition:all .3s}
 .timer-ring.warning{color:var(--yellow);border-color:var(--yellow);box-shadow:0 0 8px var(--yellow)}
-.timer-ring.danger{color:var(--red);border-color:var(--red);box-shadow:0 0 8px var(--red);animation:blink 0.5s infinite}
-.legend{font-size:0.58rem;color:#1a5a1a;letter-spacing:1px;text-align:center;line-height:2.2;margin-top:6px}
-.scroll-hint{font-size:0.55rem;color:#1a3a1a;letter-spacing:2px;margin-bottom:4px}
-#win-screen{display:none;text-align:center;padding:36px;max-width:500px;border:1px solid var(--green);box-shadow:var(--glow);background:var(--panel);animation:fadeIn 0.5s ease}
+.timer-ring.danger{color:var(--red);border-color:var(--red);box-shadow:0 0 8px var(--red);animation:blink .5s infinite}
+.legend{font-size:.58rem;color:#1a5a1a;letter-spacing:1px;text-align:center;line-height:2.2;margin-top:6px}
+.scroll-hint{font-size:.55rem;color:#1a3a1a;letter-spacing:2px;margin-bottom:4px}
+#win-screen{display:none;text-align:center;padding:36px;max-width:500px;border:1px solid var(--green);box-shadow:var(--glow);background:var(--panel);animation:fadeIn .5s ease}
 #win-screen h2{font-family:'VT323',monospace;font-size:3.5rem;letter-spacing:6px;margin-bottom:8px}
 #win-screen h2.win{color:var(--green);text-shadow:var(--glow)}
 #win-screen h2.lose{color:var(--red);text-shadow:var(--glow-red)}
 #win-screen h2.draw{color:var(--yellow)}
 .secret-display{display:flex;gap:8px;justify-content:center;margin:12px 0}
-.secret-slot{width:42px;height:50px;border:1px solid var(--green-dim);background:var(--green-dark);display:flex;align-items:center;justify-content:center;font-family:'VT323',monospace;font-size:2rem;color:var(--green);animation:fadeIn 0.4s ease}
-.toast{position:fixed;top:20px;left:50%;transform:translateX(-50%) translateY(-80px);background:var(--panel);border:1px solid var(--green);color:var(--green);font-size:0.78rem;letter-spacing:2px;padding:10px 22px;z-index:10000;transition:transform 0.3s;box-shadow:var(--glow);white-space:nowrap}
+.secret-slot{width:42px;height:50px;border:1px solid var(--green-dim);background:var(--green-dark);display:flex;align-items:center;justify-content:center;font-family:'VT323',monospace;font-size:2rem;color:var(--green);animation:fadeIn .4s ease}
+.toast{position:fixed;top:20px;left:50%;transform:translateX(-50%) translateY(-80px);background:var(--panel);border:1px solid var(--green);color:var(--green);font-size:.78rem;letter-spacing:2px;padding:10px 22px;z-index:10000;transition:transform .3s;box-shadow:var(--glow);white-space:nowrap}
 .toast.show{transform:translateX(-50%) translateY(0)}
 .toast.error{border-color:var(--red);color:var(--red);box-shadow:var(--glow-red)}
-.shake{animation:shake 0.35s ease}
+.shake{animation:shake .35s ease}
 @media(max-width:720px){.game-grid{grid-template-columns:1fr}.middle-panel{flex-direction:row;padding-top:0;justify-content:center}.vs-text{font-size:2rem}}
 </style>
 </head>
@@ -117,16 +117,15 @@ label:first-child{margin-top:0}
   <div class="header">
     <h1 id="main-title">HACK TERMINAL</h1>
     <div class="subtitle">// MULTIPLAYER CODE BREACH SYSTEM //</div>
-    <div class="version">v2.4.1 — SECURE CHANNEL ACTIVE</div>
+    <div class="version">v3.0.0 — SECURE CHANNEL ACTIVE</div>
   </div>
 
   <div class="status-bar">
     <div class="status-dot" id="status-dot"></div>
-    <span id="status-text">CONNEXION À FIREBASE...</span>
+    <span id="status-text">CONNEXION...</span>
   </div>
 
-  <!-- LOBBY -->
-  <div class="panel" id="lobby-screen">
+  <div class="panel" id="lobby-screen" style="display:none">
     <div class="panel-title">// ACCÈS SYSTÈME — AUTHENTIFICATION</div>
     <label>IDENTIFIANT OPÉRATEUR</label>
     <input class="input" id="username-input" type="text" placeholder="AGENT_7X" maxlength="12"/>
@@ -141,25 +140,23 @@ label:first-child{margin-top:0}
     </div>
   </div>
 
-  <!-- WAITING -->
   <div class="panel" id="waiting-screen" style="display:none;text-align:center;">
     <div class="panel-title">// SESSION EN ATTENTE</div>
     <div class="room-code-box">
       <div class="lbl">CODE D'ACCÈS</div>
       <div class="code" id="display-room-code">----</div>
-      <div class="lbl" style="margin-top:4px;">COMMUNIQUE CE CODE À TON ADVERSAIRE</div>
+      <div class="lbl" style="margin-top:4px;">PARTAGE CE CODE À TON ADVERSAIRE</div>
     </div>
-    <div style="color:var(--green-dim);font-size:0.78rem;letter-spacing:2px;margin:10px 0;">
+    <div style="color:var(--green-dim);font-size:.78rem;letter-spacing:2px;margin:10px 0;">
       EN ATTENTE D'UN SECOND OPÉRATEUR
       <div class="waiting" style="margin-top:8px;justify-content:center;"><span></span><span></span><span></span></div>
     </div>
-    <button class="btn danger" onclick="cancelRoom()" style="margin-top:8px;border-color:var(--red);color:var(--red);">[ ANNULER ]</button>
+    <button class="btn" onclick="cancelRoom()" style="border-color:var(--red);color:var(--red);">[ ANNULER ]</button>
   </div>
 
-  <!-- SETUP -->
   <div class="panel" id="setup-screen" style="display:none;">
     <div class="panel-title">// DÉFINIR TON CODE SECRET</div>
-    <p style="font-size:0.72rem;color:var(--green-dim);letter-spacing:1px;margin-bottom:14px;line-height:1.9;">
+    <p style="font-size:.72rem;color:var(--green-dim);letter-spacing:1px;margin-bottom:14px;line-height:1.9;">
       Choisis un code de <strong style="color:var(--green)">4 caractères</strong> (0-9 et A-F).<br>
       Ton adversaire devra le craquer avant toi.
     </p>
@@ -169,20 +166,19 @@ label:first-child{margin-top:0}
       <input class="code-char" maxlength="1"/>
       <input class="code-char" maxlength="1"/>
     </div>
-    <div style="font-size:0.6rem;color:#1a5a1a;text-align:center;letter-spacing:1px;margin-bottom:6px;">CARACTÈRES VALIDES : 0-9, A-F</div>
+    <div style="font-size:.6rem;color:#1a5a1a;text-align:center;letter-spacing:1px;margin-bottom:6px;">CARACTÈRES VALIDES : 0-9, A-F</div>
     <button class="btn" id="confirm-code-btn" onclick="confirmCode()">[ VERROUILLER LE CODE ]</button>
-    <div id="waiting-enemy-setup" style="display:none;margin-top:14px;text-align:center;color:var(--green-dim);font-size:0.78rem;letter-spacing:2px;">
+    <div id="waiting-enemy-setup" style="display:none;margin-top:14px;text-align:center;color:var(--green-dim);font-size:.78rem;letter-spacing:2px;">
       CODE VERROUILLÉ — EN ATTENTE DE L'ADVERSAIRE
       <div class="waiting" style="margin-top:8px;justify-content:center;"><span></span><span></span><span></span></div>
     </div>
   </div>
 
-  <!-- GAME -->
   <div id="game-area">
     <div class="game-grid">
       <div class="player-panel" id="my-panel">
         <div class="player-header">
-          <div class="player-name you" id="my-name-display">AGENT_X</div>
+          <div class="player-name you" id="my-name-display">---</div>
           <div class="hp-bar-wrap">
             <span id="my-tries-left">10</span>
             <div class="hp-bar"><div class="hp-fill" id="my-hp-fill" style="width:100%"></div></div>
@@ -205,11 +201,11 @@ label:first-child{margin-top:0}
         <div class="vs-text">VS</div>
         <div class="turn-counter">TOUR<br><span id="turn-num" style="font-family:'VT323',monospace;font-size:2rem;color:var(--green)">--</span></div>
         <div class="timer-ring" id="timer-ring">--</div>
-        <div style="font-size:0.58rem;color:var(--green-dim);letter-spacing:1px;text-align:center;" id="whose-turn">---</div>
+        <div id="whose-turn" style="font-size:.58rem;color:var(--green-dim);letter-spacing:1px;text-align:center;">---</div>
       </div>
       <div class="player-panel enemy-panel" id="enemy-panel">
         <div class="player-header">
-          <div class="player-name enemy" id="enemy-name-display">ENNEMI</div>
+          <div class="player-name enemy" id="enemy-name-display">---</div>
           <div class="hp-bar-wrap">
             <span id="enemy-tries-left">10</span>
             <div class="hp-bar"><div class="hp-fill" id="enemy-hp-fill" style="width:100%"></div></div>
@@ -221,11 +217,10 @@ label:first-child{margin-top:0}
     </div>
   </div>
 
-  <!-- WIN -->
   <div id="win-screen">
     <h2 id="win-title">---</h2>
-    <div id="win-msg" style="font-size:0.78rem;color:var(--green-dim);letter-spacing:2px;"></div>
-    <div style="font-size:0.65rem;color:var(--green-dim);letter-spacing:2px;margin:14px 0 6px;">CODE ADVERSE ÉTAIT :</div>
+    <div id="win-msg" style="font-size:.78rem;color:var(--green-dim);letter-spacing:2px;"></div>
+    <div style="font-size:.65rem;color:var(--green-dim);letter-spacing:2px;margin:14px 0 6px;">CODE ADVERSE ÉTAIT :</div>
     <div class="secret-display" id="revealed-code"></div>
     <button class="btn" onclick="resetGame()" style="margin-top:18px;">[ NOUVELLE SESSION ]</button>
   </div>
@@ -233,8 +228,11 @@ label:first-child{margin-top:0}
 <div class="toast" id="toast"></div>
 
 <script type="module">
+// ─── FIREBASE ────────────────────────────────────────────
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-import { getDatabase, ref, set, get, onValue, update, remove, off } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
+import {
+  getDatabase, ref, set, get, onValue, update, remove, off
+} from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyD5iHeUwIGlQwK-WPbhAkj0Wg5rbjc9-rs",
@@ -246,47 +244,52 @@ const firebaseConfig = {
   appId: "1:895717198964:web:9590c7a61f57bccba59521"
 };
 
-const app = initializeApp(firebaseConfig);
-const db = getDatabase(app);
+let db;
+try {
+  const fbApp = initializeApp(firebaseConfig);
+  db = getDatabase(fbApp);
+} catch(e) {
+  setStatus('ERREUR INIT FIREBASE : ' + e.message, false, true);
+}
 
-// ─── SESSION PERSISTENCE ─────────────────────────────────
-// Survit aux refreshs via sessionStorage
-function saveSession(data) {
-  sessionStorage.setItem('hack_session', JSON.stringify(data));
+// ─── PERSISTENCE localStorage ────────────────────────────
+const LS_KEY = 'hack_terminal_v3';
+function saveLocal(data) {
+  try { localStorage.setItem(LS_KEY, JSON.stringify(data)); } catch(e) {}
 }
-function loadSession() {
-  try { return JSON.parse(sessionStorage.getItem('hack_session')); } catch(e) { return null; }
+function loadLocal() {
+  try { return JSON.parse(localStorage.getItem(LS_KEY)); } catch(e) { return null; }
 }
-function clearSession() {
-  sessionStorage.removeItem('hack_session');
+function clearLocal() {
+  try { localStorage.removeItem(LS_KEY); } catch(e) {}
 }
 
 // ─── STATE ───────────────────────────────────────────────
-let myRole = null;
-let roomId = null;
-let myName = '';
+let myRole    = null;   // 'player1' | 'player2'
+let roomId    = null;
+let myName    = '';
 let enemyName = '';
-let myCode = '';
+let myCode    = '';
 let enemyCode = '';
-let myAttempts = 0;
+let myAttempts    = 0;
 let enemyAttempts = 0;
 const MAX = 10;
 let timerInterval = null;
-let timerValue = 30;
-let mainListener = null; // référence au listener principal pour pouvoir le détacher
+let timerValue    = 30;
+let roomListener  = null;
 
-// ─── UI HELPERS ──────────────────────────────────────────
-function setStatus(text, active=false, danger=false) {
-  document.getElementById('status-text').textContent = text;
-  const dot = document.getElementById('status-dot');
-  dot.className = 'status-dot'+(active?' active':'')+(danger?' red':'');
+// ─── UI ──────────────────────────────────────────────────
+function setStatus(txt, active=false, danger=false) {
+  document.getElementById('status-text').textContent = txt;
+  const d = document.getElementById('status-dot');
+  d.className = 'status-dot' + (active?' active':'') + (danger?' red':'');
 }
 
-function showToast(msg, error=false) {
+function toast(msg, err=false) {
   const t = document.getElementById('toast');
   t.textContent = msg;
-  t.className = 'toast'+(error?' error':'')+' show';
-  setTimeout(()=>{ t.className='toast'+(error?' error':''); }, 2600);
+  t.className = 'toast'+(err?' error':'')+' show';
+  setTimeout(()=>{ t.className='toast'+(err?' error':''); }, 2800);
 }
 
 function glitch() {
@@ -295,506 +298,512 @@ function glitch() {
   setTimeout(()=>h.classList.remove('glitch'), 350);
 }
 
-function shake(el) {
-  el.classList.add('shake');
-  setTimeout(()=>el.classList.remove('shake'), 400);
+function showOnly(id) {
+  ['lobby-screen','waiting-screen','setup-screen','win-screen'].forEach(x => {
+    document.getElementById(x).style.display = 'none';
+  });
+  document.getElementById('game-area').style.display = 'none';
+  if (id === 'game-area') {
+    document.getElementById('game-area').style.display = 'block';
+  } else if (id) {
+    document.getElementById(id).style.display = id === 'waiting-screen' ? 'block' : 'block';
+  }
 }
 
-function genCode() {
+function genRoomCode() {
   const c = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
   return Array.from({length:4}, ()=>c[Math.floor(Math.random()*c.length)]).join('');
 }
 
-function validCode(s) { return /^[0-9A-F]{4}$/.test(s.toUpperCase()); }
+function validCode(s) {
+  return /^[0-9A-F]{4}$/i.test(s);
+}
 
 function checkGuess(guess, secret) {
-  guess=guess.toUpperCase(); secret=secret.toUpperCase();
-  const g=guess.split(''), s=secret.split('');
-  const res=Array(4).fill('wrong');
-  const usedS=Array(4).fill(false), usedG=Array(4).fill(false);
-  for(let i=0;i<4;i++) if(g[i]===s[i]){res[i]='correct';usedS[i]=usedG[i]=true;}
-  for(let i=0;i<4;i++){
-    if(usedG[i]) continue;
-    for(let j=0;j<4;j++){
-      if(!usedS[j]&&g[i]===s[j]){res[i]='misplaced';usedS[j]=true;break;}
+  const g = guess.toUpperCase().split('');
+  const s = secret.toUpperCase().split('');
+  const res = Array(4).fill('wrong');
+  const usedS = Array(4).fill(false);
+  const usedG = Array(4).fill(false);
+  for (let i=0;i<4;i++) {
+    if (g[i]===s[i]) { res[i]='correct'; usedS[i]=usedG[i]=true; }
+  }
+  for (let i=0;i<4;i++) {
+    if (usedG[i]) continue;
+    for (let j=0;j<4;j++) {
+      if (!usedS[j] && g[i]===s[j]) { res[i]='misplaced'; usedS[j]=true; break; }
     }
   }
   return res;
 }
 
-function dots(result) {
+function renderDots(result) {
   return `<div class="result-dots">${result.map(r=>`<span class="dot ${r}"></span>`).join('')}</div>`;
 }
 
-function addEntry(containerId, attempt, result, isEnemy=false) {
+function addHistoryEntry(containerId, attempt, result, isEnemy) {
   const c = document.getElementById(containerId);
-  const n = c.children.length+1;
+  const n = c.children.length + 1;
   const d = document.createElement('div');
-  d.className = 'history-entry'+(isEnemy?' enemy-entry':'');
-  d.innerHTML = `<span class="idx">${String(n).padStart(2,'0')}</span><span class="attempt">${attempt}</span>${dots(result)}`;
+  d.className = 'history-entry' + (isEnemy ? ' enemy-entry' : '');
+  d.innerHTML = `<span class="idx">${String(n).padStart(2,'0')}</span><span class="attempt">${attempt}</span>${renderDots(result)}`;
   c.appendChild(d);
   c.scrollTop = c.scrollHeight;
 }
 
-function updateHP(role, attempts) {
-  const isMe = role===myRole;
-  const pct = Math.max(0,((MAX-attempts)/MAX)*100);
-  const fill = document.getElementById(isMe?'my-hp-fill':'enemy-hp-fill');
-  const label = document.getElementById(isMe?'my-tries-left':'enemy-tries-left');
-  fill.style.width = pct+'%';
-  fill.className = 'hp-fill'+(pct<=30?' critical':pct<=60?' low':'');
-  label.textContent = MAX-attempts;
+function setHP(role, attempts) {
+  const isMe = role === myRole;
+  const pct = Math.max(0, ((MAX-attempts)/MAX)*100);
+  const fill  = document.getElementById(isMe ? 'my-hp-fill' : 'enemy-hp-fill');
+  const label = document.getElementById(isMe ? 'my-tries-left' : 'enemy-tries-left');
+  fill.style.width = pct + '%';
+  fill.className = 'hp-fill' + (pct<=30?' critical': pct<=60?' low':'');
+  label.textContent = MAX - attempts;
 }
 
-function setupNav(containerId, onEnter) {
+function setupInputNav(containerId, onEnterFn) {
   const inputs = [...document.querySelectorAll(`#${containerId} .code-char`)];
-  inputs.forEach((inp,i)=>{
-    // Évite de dupliquer les listeners
-    const newInp = inp.cloneNode(true);
-    inp.parentNode.replaceChild(newInp, inp);
-    newInp.addEventListener('input',()=>{
-      newInp.value = newInp.value.toUpperCase().replace(/[^0-9A-F]/g,'').slice(-1);
-      if(newInp.value && i<inputs.length-1) inputs[i+1].focus();
-    });
-    newInp.addEventListener('keydown',e=>{
-      if(e.key==='Backspace'&&!newInp.value&&i>0) inputs[i-1].focus();
-      if(e.key==='Enter') onEnter();
-    });
+  inputs.forEach((inp, i) => {
+    inp.oninput = () => {
+      inp.value = inp.value.toUpperCase().replace(/[^0-9A-F]/g,'').slice(-1);
+      if (inp.value && i < inputs.length-1) inputs[i+1].focus();
+    };
+    inp.onkeydown = e => {
+      if (e.key==='Backspace' && !inp.value && i>0) inputs[i-1].focus();
+      if (e.key==='Enter') onEnterFn();
+    };
   });
 }
 
-function hideAll() {
-  ['lobby-screen','waiting-screen','setup-screen','win-screen'].forEach(id=>{
-    document.getElementById(id).style.display='none';
+// ─── LISTENER UNIQUE SUR LA ROOM ─────────────────────────
+function attachRoomListener() {
+  if (!roomId) return;
+  if (roomListener) {
+    off(ref(db, `rooms/${roomId}`), 'value', roomListener);
+    roomListener = null;
+  }
+
+  const roomRef = ref(db, `rooms/${roomId}`);
+  roomListener = onValue(roomRef, snap => {
+    if (!snap.exists()) {
+      // Room détruite
+      clearLocal();
+      toast('SESSION SUPPRIMÉE', true);
+      fullReset(false);
+      return;
+    }
+    const r = snap.val();
+    handleRoomUpdate(r);
+  }, err => {
+    setStatus('ERREUR FIREBASE : ' + err.message, false, true);
   });
-  document.getElementById('game-area').style.display='none';
 }
 
-// ─── INIT : vérifie si session en cours ──────────────────
-async function init() {
-  setStatus('CONNEXION À FIREBASE...', false);
-  try {
-    // Test de connexion rapide
-    await get(ref(db, '.info/connected'));
-    setStatus('SYSTÈME EN LIGNE', true);
-  } catch(e) {
-    setStatus('ERREUR FIREBASE', false, true);
+function handleRoomUpdate(r) {
+  // ── WAITING ──
+  if (r.status === 'waiting') {
+    if (document.getElementById('waiting-screen').style.display !== 'block') {
+      showOnly('waiting-screen');
+      document.getElementById('display-room-code').textContent = roomId;
+    }
     return;
   }
 
-  const session = loadSession();
-  if(session && session.roomId) {
-    // Tente de restaurer la session
-    try {
-      const snap = await get(ref(db, `rooms/${session.roomId}`));
-      if(snap.exists()) {
-        const room = snap.val();
-        myRole = session.myRole;
-        roomId = session.roomId;
-        myName = session.myName;
-        myCode = session.myCode || '';
+  // ── SETUP ──
+  if (r.status === 'setup') {
+    // Récupère les infos de l'ennemi
+    const eRole = myRole==='player1' ? 'player2' : 'player1';
+    enemyName = r[eRole]?.name || '';
+    enemyCode = r[eRole]?.code || '';
 
-        // Restaure selon le statut de la room
-        if(room.status === 'waiting' && myRole === 'player1') {
-          hideAll();
-          document.getElementById('waiting-screen').style.display = 'block';
-          document.getElementById('display-room-code').textContent = roomId;
-          setStatus(`SESSION ${roomId} — EN ATTENTE`, true);
-          attachMainListener();
-        } else if(room.status === 'setup') {
-          enemyCode = myRole==='player1' ? room.player2?.code||'' : room.player1?.code||'';
-          enemyName = myRole==='player1' ? room.player2?.name||'' : room.player1?.name||'';
-          hideAll();
-          if(myCode) {
-            // Code déjà choisi, attends l'autre
-            document.getElementById('setup-screen').style.display='block';
-            document.getElementById('confirm-code-btn').style.display='none';
-            document.getElementById('waiting-enemy-setup').style.display='block';
-            [...document.querySelectorAll('#setup-inputs .code-char')].forEach((inp,i)=>{inp.value=myCode[i]||'';inp.disabled=true;});
-          } else {
-            startSetup();
-          }
-          attachMainListener();
-        } else if(room.status === 'playing') {
-          enemyCode = myRole==='player1' ? room.player2?.code||'' : room.player1?.code||'';
-          enemyName = myRole==='player1' ? room.player2?.name||'' : room.player1?.name||'';
-          hideAll();
-          launchGame(room, true);
-        } else if(room.status === 'gameover') {
-          hideAll();
-          showEnd(room);
-        } else {
-          clearSession();
-          showLobby();
-        }
-      } else {
-        clearSession();
-        showLobby();
+    const myData = r[myRole] || {};
+    if (!myData.ready) {
+      // Je n'ai pas encore choisi mon code
+      if (document.getElementById('setup-screen').style.display !== 'block') {
+        showOnly('setup-screen');
+        setupInputNav('setup-inputs', confirmCode);
+        setTimeout(()=>{ document.querySelector('#setup-inputs .code-char')?.focus(); }, 50);
+        setStatus('DÉFINIR TON CODE SECRET', true);
       }
-    } catch(e) {
-      clearSession();
-      showLobby();
+    } else {
+      // Code déjà choisi, j'attends l'autre
+      if (document.getElementById('setup-screen').style.display !== 'block') {
+        showOnly('setup-screen');
+        document.getElementById('confirm-code-btn').style.display = 'none';
+        document.getElementById('waiting-enemy-setup').style.display = 'block';
+        const ins = [...document.querySelectorAll('#setup-inputs .code-char')];
+        myCode.split('').forEach((c,i)=>{ if(ins[i]){ins[i].value=c;ins[i].disabled=true;} });
+        setStatus('CODE VERROUILLÉ — EN ATTENTE', true);
+      }
+      // Vérifie si les deux sont prêts
+      if (r.player1?.ready && r.player2?.ready) {
+        update(ref(db,`rooms/${roomId}`), {status:'playing'}).catch(()=>{});
+      }
     }
-  } else {
-    showLobby();
+    return;
+  }
+
+  // ── PLAYING ──
+  if (r.status === 'playing') {
+    const eRole = myRole==='player1' ? 'player2' : 'player1';
+    enemyCode = r[eRole]?.code || '';
+    enemyName = r[eRole]?.name || '';
+
+    if (document.getElementById('game-area').style.display !== 'block') {
+      // Première fois qu'on arrive sur la partie (ou restore)
+      renderGame(r);
+      return;
+    }
+    // Mise à jour en live
+    liveUpdateGame(r);
+    return;
+  }
+
+  // ── GAMEOVER ──
+  if (r.status === 'gameover') {
+    stopTimer();
+    if (document.getElementById('win-screen').style.display !== 'block') {
+      renderEndScreen(r);
+    }
   }
 }
 
-function showLobby() {
-  hideAll();
-  document.getElementById('lobby-screen').style.display='block';
-}
-
-// ─── LISTENER PRINCIPAL ──────────────────────────────────
-// Un seul listener sur toute la room, gère tous les états
-function attachMainListener() {
-  if(mainListener) {
-    off(ref(db, `rooms/${roomId}`), 'value', mainListener);
-  }
-
-  mainListener = onValue(ref(db, `rooms/${roomId}`), (snap)=>{
-    if(!snap.exists()) {
-      // Room supprimée (annulée par l'autre joueur)
-      clearSession();
-      showToast('SESSION FERMÉE', true);
-      resetGame();
-      return;
-    }
-
-    const r = snap.val();
-
-    // WAITING → quelqu'un a rejoint
-    if(r.status === 'waiting' && myRole === 'player1') {
-      // toujours en attente, rien à faire
-      return;
-    }
-
-    // SETUP → les deux joueurs présents
-    if(r.status === 'setup') {
-      enemyName = myRole==='player1' ? r.player2?.name||'' : r.player1?.name||'';
-      enemyCode = myRole==='player1' ? r.player2?.code||'' : r.player1?.code||'';
-
-      const myData = r[myRole];
-      if(!myData?.ready) {
-        // N'affiche setup que si pas encore affiché
-        if(document.getElementById('setup-screen').style.display === 'none' &&
-           document.getElementById('waiting-screen').style.display === 'none') {
-          hideAll();
-          startSetup();
-        } else if(document.getElementById('waiting-screen').style.display === 'block') {
-          // Player1 était en waiting, passe au setup
-          hideAll();
-          startSetup();
-        }
-      }
-
-      // Les deux sont prêts → démarre la partie
-      if(r.player1?.ready && r.player2?.ready) {
-        update(ref(db, `rooms/${roomId}`), {status:'playing'}).catch(()=>{});
-      }
-      return;
-    }
-
-    // PLAYING
-    if(r.status === 'playing') {
-      enemyCode = myRole==='player1' ? r.player2?.code||'' : r.player1?.code||'';
-      enemyName = myRole==='player1' ? r.player2?.name||'' : r.player1?.name||'';
-
-      if(document.getElementById('game-area').style.display === 'none') {
-        hideAll();
-        launchGame(r, false);
-        return;
-      }
-      // Mise à jour en temps réel pendant la partie
-      updateGameUI(r);
-      return;
-    }
-
-    // GAMEOVER
-    if(r.status === 'gameover') {
-      showEnd(r);
-    }
-  });
-}
-
-// ─── LOBBY ACTIONS ───────────────────────────────────────
-window.showJoinForm = ()=>{
-  document.getElementById('join-form').style.display='block';
+// ─── LOBBY ───────────────────────────────────────────────
+window.showJoinForm = () => {
+  document.getElementById('join-form').style.display = 'block';
   document.getElementById('room-code-input').focus();
 };
 
-window.createRoom = async ()=>{
-  const u = document.getElementById('username-input').value.trim().toUpperCase()||'AGENT_'+Math.floor(Math.random()*999);
-  myName=u; myRole='player1'; roomId=genCode(); myCode='';
+window.createRoom = async () => {
+  if (!db) { toast('FIREBASE NON INITIALISÉ', true); return; }
+  const u = document.getElementById('username-input').value.trim().toUpperCase() || ('AGENT_'+Math.floor(Math.random()*999));
+  myName = u; myRole = 'player1'; roomId = genRoomCode(); myCode = '';
 
   try {
-    await set(ref(db,`rooms/${roomId}`),{
-      player1:{name:myName,code:'',ready:false,guesses:[]},
-      player2:null,
-      turn:'player1',
-      turnNumber:1,
-      status:'waiting',
-      createdAt:Date.now()
+    await set(ref(db, `rooms/${roomId}`), {
+      player1: { name:myName, code:'', ready:false, guesses:[] },
+      player2: { name:'', code:'', ready:false, guesses:[] },
+      turn: 'player1',
+      turnNumber: 1,
+      status: 'waiting',
+      createdAt: Date.now()
     });
-    saveSession({myRole,roomId,myName,myCode});
-    hideAll();
-    document.getElementById('waiting-screen').style.display='block';
-    document.getElementById('display-room-code').textContent=roomId;
-    setStatus(`SESSION ${roomId} — EN ATTENTE`,true);
+    saveLocal({ myRole, roomId, myName, myCode });
+    showOnly('waiting-screen');
+    document.getElementById('display-room-code').textContent = roomId;
+    setStatus(`SESSION ${roomId} — EN ATTENTE`, true);
     glitch();
-    attachMainListener();
-  } catch(e){ showToast('ERREUR : '+e.message,true); }
+    attachRoomListener();
+  } catch(e) {
+    toast('ERREUR CRÉATION : ' + e.message, true);
+    console.error(e);
+  }
 };
 
-window.joinRoom = async ()=>{
-  const u = document.getElementById('username-input').value.trim().toUpperCase()||'AGENT_'+Math.floor(Math.random()*999);
+window.joinRoom = async () => {
+  if (!db) { toast('FIREBASE NON INITIALISÉ', true); return; }
+  const u = document.getElementById('username-input').value.trim().toUpperCase() || ('AGENT_'+Math.floor(Math.random()*999));
   const code = document.getElementById('room-code-input').value.trim().toUpperCase();
-  if(code.length!==4){showToast('CODE INVALIDE',true);return;}
-  myName=u; myRole='player2'; roomId=code; myCode='';
+  if (code.length !== 4) { toast('CODE INVALIDE', true); return; }
+  myName = u; myRole = 'player2'; roomId = code; myCode = '';
 
   try {
-    const snap = await get(ref(db,`rooms/${roomId}`));
-    if(!snap.exists()){showToast('SESSION INTROUVABLE',true);return;}
+    const snap = await get(ref(db, `rooms/${roomId}`));
+    if (!snap.exists()) { toast('SESSION INTROUVABLE', true); return; }
     const room = snap.val();
-    if(room.status!=='waiting'){showToast('SESSION NON DISPONIBLE',true);return;}
-    if(room.player2?.name){showToast('SESSION COMPLÈTE',true);return;}
+    if (room.status !== 'waiting') { toast('SESSION NON DISPONIBLE', true); return; }
+    if (room.player2?.name) { toast('SESSION COMPLÈTE', true); return; }
 
-    await update(ref(db,`rooms/${roomId}`),{
-      'player2/name':myName,'player2/code':'','player2/ready':false,'player2/guesses':[],
-      status:'setup'
+    await update(ref(db, `rooms/${roomId}`), {
+      'player2/name': myName,
+      'player2/code': '',
+      'player2/ready': false,
+      'player2/guesses': [],
+      status: 'setup'
     });
-    saveSession({myRole,roomId,myName,myCode});
-    hideAll();
-    setStatus(`CONNECTÉ À ${roomId}`,true);
+    saveLocal({ myRole, roomId, myName, myCode });
+    setStatus(`CONNECTÉ À ${roomId}`, true);
     glitch();
-    attachMainListener();
-  } catch(e){ showToast('ERREUR : '+e.message,true); }
+    attachRoomListener();
+  } catch(e) {
+    toast('ERREUR CONNEXION : ' + e.message, true);
+    console.error(e);
+  }
 };
 
-window.cancelRoom = async ()=>{
-  if(roomId) try{ await remove(ref(db,`rooms/${roomId}`)); }catch(e){}
-  clearSession();
-  myRole=null; roomId=null; myName=''; myCode='';
-  showLobby();
-  setStatus('SYSTÈME EN LIGNE',true);
+window.cancelRoom = async () => {
+  if (roomId) try { await remove(ref(db, `rooms/${roomId}`)); } catch(e) {}
+  fullReset(true);
 };
 
 // ─── SETUP ───────────────────────────────────────────────
-function startSetup() {
-  document.getElementById('setup-screen').style.display='block';
-  document.getElementById('confirm-code-btn').style.display='block';
-  document.getElementById('waiting-enemy-setup').style.display='none';
-  setupNav('setup-inputs', confirmCode);
-  setTimeout(()=>{
-    const first = document.querySelector('#setup-inputs .code-char');
-    if(first) first.focus();
-  }, 100);
-  setStatus('DÉFINIR TON CODE SECRET',true);
-}
-
-window.confirmCode = async ()=>{
+window.confirmCode = async () => {
   const inputs = [...document.querySelectorAll('#setup-inputs .code-char')];
   const code = inputs.map(i=>i.value.toUpperCase()).join('');
-  if(!validCode(code)){
-    showToast('CODE INVALIDE — 4 CARACTÈRES (0-9, A-F)',true);
-    shake(document.getElementById('setup-screen'));
+  if (!validCode(code)) {
+    toast('CODE INVALIDE — 4 CARACTÈRES (0-9, A-F)', true);
+    document.getElementById('setup-screen').classList.add('shake');
+    setTimeout(()=>document.getElementById('setup-screen').classList.remove('shake'), 400);
     return;
   }
   myCode = code;
-  saveSession({myRole,roomId,myName,myCode});
-  document.getElementById('confirm-code-btn').style.display='none';
-  document.getElementById('waiting-enemy-setup').style.display='block';
-  inputs.forEach(i=>i.disabled=true);
+  saveLocal({ myRole, roomId, myName, myCode });
+  document.getElementById('confirm-code-btn').style.display = 'none';
+  document.getElementById('waiting-enemy-setup').style.display = 'block';
+  inputs.forEach(i => i.disabled = true);
+
   try {
-    await update(ref(db,`rooms/${roomId}/${myRole}`),{code:myCode,ready:true});
-    setStatus('CODE VERROUILLÉ — EN ATTENTE',true);
-  } catch(e){ showToast('ERREUR',true); }
+    await update(ref(db, `rooms/${roomId}/${myRole}`), { code: myCode, ready: true });
+    setStatus('CODE VERROUILLÉ — EN ATTENTE', true);
+  } catch(e) {
+    toast('ERREUR FIREBASE : ' + e.message, true);
+    console.error(e);
+  }
 };
 
-// ─── GAME ─────────────────────────────────────────────────
-function launchGame(room, isRestore=false) {
-  document.getElementById('game-area').style.display='block';
-  document.getElementById('my-name-display').textContent=myName;
-  document.getElementById('enemy-name-display').textContent=enemyName;
-  setupNav('game-inputs', submitGuess);
+// ─── GAME RENDER ─────────────────────────────────────────
+function renderGame(r) {
+  showOnly('game-area');
+  document.getElementById('my-name-display').textContent    = myName;
+  document.getElementById('enemy-name-display').textContent = enemyName;
+  setupInputNav('game-inputs', submitGuess);
+  setStatus(`HACKING — SESSION ${roomId}`, true);
+  toast('SESSION ACTIVE — CRACK LE CODE !');
+  glitch();
 
-  if(!isRestore) {
-    setStatus(`HACKING — SESSION ${roomId}`,true);
-    glitch();
-    showToast('SESSION ACTIVE — CRACK LE CODE !');
-  } else {
-    setStatus(`SESSION RESTAURÉE — ${roomId}`,true);
-    showToast('SESSION RESTAURÉE');
-  }
+  // Replay tout l'historique (utile au refresh)
+  document.getElementById('my-history').innerHTML    = '';
+  document.getElementById('enemy-history').innerHTML = '';
+  myAttempts = 0; enemyAttempts = 0;
 
-  // Replay guesses (pour restore ou 1er chargement)
-  const myGuesses = (myRole==='player1'?room.player1:room.player2)?.guesses||[];
-  const enemyGuesses = (myRole==='player1'?room.player2:room.player1)?.guesses||[];
-  document.getElementById('my-history').innerHTML='';
-  document.getElementById('enemy-history').innerHTML='';
-  myAttempts=0; enemyAttempts=0;
-  myGuesses.forEach(g=>{ addEntry('my-history',g.attempt,g.result,false); myAttempts++; });
-  enemyGuesses.forEach(g=>{ addEntry('enemy-history',g.attempt,g.result,true); enemyAttempts++; });
-  updateHP(myRole,myAttempts);
-  updateHP(myRole==='player1'?'player2':'player1',enemyAttempts);
+  const eRole = myRole==='player1'?'player2':'player1';
+  const myG  = r[myRole]?.guesses  || [];
+  const enG  = r[eRole]?.guesses   || [];
+  myG.forEach(g => { addHistoryEntry('my-history',    g.attempt, g.result, false); myAttempts++; });
+  enG.forEach(g => { addHistoryEntry('enemy-history', g.attempt, g.result, true);  enemyAttempts++; });
+  setHP(myRole,  myAttempts);
+  setHP(eRole,   enemyAttempts);
 
-  updateGameUI(room);
-  if(!isRestore) attachMainListener(); // déjà branché si restore
+  liveUpdateGame(r);
 }
 
-let lastEnemyCount = 0;
-
-function updateGameUI(r) {
-  if(document.getElementById('game-area').style.display==='none') return;
-
-  const enemyRole = myRole==='player1'?'player2':'player1';
+function liveUpdateGame(r) {
+  const eRole = myRole==='player1'?'player2':'player1';
 
   // Nouvelles tentatives ennemies
-  const eGuesses = r[enemyRole]?.guesses||[];
-  if(eGuesses.length > enemyAttempts) {
-    for(let i=enemyAttempts;i<eGuesses.length;i++) {
-      addEntry('enemy-history',eGuesses[i].attempt,eGuesses[i].result,true);
+  const enG = r[eRole]?.guesses || [];
+  if (enG.length > enemyAttempts) {
+    for (let i = enemyAttempts; i < enG.length; i++) {
+      addHistoryEntry('enemy-history', enG[i].attempt, enG[i].result, true);
     }
-    enemyAttempts = eGuesses.length;
-    updateHP(enemyRole,enemyAttempts);
+    enemyAttempts = enG.length;
+    setHP(eRole, enemyAttempts);
   }
 
-  // Mes tentatives (sync depuis Firebase)
-  const myGuesses = r[myRole]?.guesses||[];
-  if(myGuesses.length !== myAttempts) {
-    myAttempts = myGuesses.length;
-    updateHP(myRole,myAttempts);
+  // Sync mes tentatives
+  const myG = r[myRole]?.guesses || [];
+  if (myG.length !== myAttempts) {
+    myAttempts = myG.length;
+    setHP(myRole, myAttempts);
   }
 
-  // Tour
-  document.getElementById('turn-num').textContent = r.turnNumber||1;
-  const isMyTurn = r.turn===myRole;
-  document.getElementById('my-panel').className = 'player-panel'+(isMyTurn?' active-turn':'');
-  document.getElementById('enemy-panel').className = 'player-panel enemy-panel'+(!isMyTurn?' active-turn':'');
-  document.getElementById('whose-turn').textContent = isMyTurn?'[ TON TOUR ]':'[ ENNEMI ACTIF ]';
-  [...document.querySelectorAll('#game-inputs .code-char')].forEach(i=>i.disabled=!isMyTurn);
+  // Tour + timer
+  const isMyTurn = r.turn === myRole;
+  document.getElementById('turn-num').textContent = r.turnNumber || 1;
+  document.getElementById('my-panel').className    = 'player-panel' + (isMyTurn  ? ' active-turn' : '');
+  document.getElementById('enemy-panel').className = 'player-panel enemy-panel' + (!isMyTurn ? ' active-turn' : '');
+  document.getElementById('whose-turn').textContent = isMyTurn ? '[ TON TOUR ]' : '[ ENNEMI ACTIF ]';
+
+  const gameInputs = [...document.querySelectorAll('#game-inputs .code-char')];
+  gameInputs.forEach(i => i.disabled = !isMyTurn);
   document.getElementById('submit-btn').disabled = !isMyTurn;
-  if(isMyTurn && !timerInterval) startTimer();
-  else if(!isMyTurn) stopTimer();
+
+  if (isMyTurn && !timerInterval) startTimer();
+  else if (!isMyTurn) stopTimer();
 }
 
+// ─── TIMER ───────────────────────────────────────────────
 function startTimer() {
-  timerValue=30; stopTimer();
+  timerValue = 30; stopTimer();
   const ring = document.getElementById('timer-ring');
-  timerInterval = setInterval(()=>{
+  timerInterval = setInterval(() => {
     timerValue--;
-    ring.textContent=timerValue;
-    ring.className='timer-ring'+(timerValue<=5?' danger':timerValue<=10?' warning':'');
-    if(timerValue<=0){stopTimer();autoSkip();}
-  },1000);
+    ring.textContent = timerValue;
+    ring.className = 'timer-ring' + (timerValue<=5?' danger': timerValue<=10?' warning':'');
+    if (timerValue <= 0) { stopTimer(); autoSkip(); }
+  }, 1000);
 }
 
 function stopTimer() {
-  if(timerInterval){clearInterval(timerInterval);timerInterval=null;}
+  if (timerInterval) { clearInterval(timerInterval); timerInterval = null; }
   const ring = document.getElementById('timer-ring');
-  ring.textContent='--'; ring.className='timer-ring';
+  ring.textContent = '--'; ring.className = 'timer-ring';
 }
 
 async function autoSkip() {
-  showToast('TEMPS ÉCOULÉ — TOUR PASSÉ',true);
-  const enemyRole = myRole==='player1'?'player2':'player1';
-  const snap = await get(ref(db,`rooms/${roomId}/turnNumber`));
-  await update(ref(db,`rooms/${roomId}`),{turn:enemyRole,turnNumber:(snap.val()||1)+1});
+  toast('TEMPS ÉCOULÉ — TOUR PASSÉ', true);
+  const eRole = myRole==='player1'?'player2':'player1';
+  const snap = await get(ref(db, `rooms/${roomId}/turnNumber`));
+  await update(ref(db, `rooms/${roomId}`), { turn: eRole, turnNumber: (snap.val()||1)+1 });
 }
 
-window.submitGuess = async ()=>{
+// ─── SUBMIT ──────────────────────────────────────────────
+window.submitGuess = async () => {
   const inputs = [...document.querySelectorAll('#game-inputs .code-char')];
   const guess = inputs.map(i=>i.value.toUpperCase()).join('');
-  if(!validCode(guess)){
-    showToast('CODE INVALIDE — 4 CARACTÈRES (0-9, A-F)',true);
-    shake(document.getElementById('game-inputs'));
+  if (!validCode(guess)) {
+    toast('CODE INVALIDE — 4 CARACTÈRES (0-9, A-F)', true);
+    document.getElementById('game-inputs').classList.add('shake');
+    setTimeout(()=>document.getElementById('game-inputs').classList.remove('shake'), 400);
     return;
   }
-  inputs.forEach(i=>{i.value='';i.disabled=true;});
-  document.getElementById('submit-btn').disabled=true;
+  inputs.forEach(i=>{ i.value=''; i.disabled=true; });
+  document.getElementById('submit-btn').disabled = true;
   stopTimer();
 
-  const result = checkGuess(guess,enemyCode);
-  const isWin = result.every(r=>r==='correct');
+  const result  = checkGuess(guess, enemyCode);
+  const isWin   = result.every(r=>r==='correct');
   myAttempts++;
-  addEntry('my-history',guess,result,false);
-  updateHP(myRole,myAttempts);
+  addHistoryEntry('my-history', guess, result, false);
+  setHP(myRole, myAttempts);
   glitch();
 
-  const enemyRole = myRole==='player1'?'player2':'player1';
-  const snap = await get(ref(db,`rooms/${roomId}`));
-  const room = snap.val();
-  const myGuesses = [...(room[myRole]?.guesses||[]),{attempt:guess,result}];
-  const enemyGuesses = room[enemyRole]?.guesses||[];
-  const turnNum = (room.turnNumber||1)+1;
+  const eRole = myRole==='player1'?'player2':'player1';
+  const snap  = await get(ref(db, `rooms/${roomId}`));
+  const room  = snap.val();
+  const myG   = [...(room[myRole]?.guesses||[]), { attempt:guess, result }];
+  const enG   = room[eRole]?.guesses || [];
+  const tNum  = (room.turnNumber||1) + 1;
 
   let status='playing', winner=null;
-  if(isWin){status='gameover';winner=myRole;}
-  else if(myAttempts>=MAX && enemyGuesses.length>=MAX){status='gameover';winner='draw';}
-  else if(myAttempts>=MAX){status='gameover';winner=enemyRole;}
+  if (isWin)                              { status='gameover'; winner=myRole; }
+  else if (myAttempts>=MAX && enG.length>=MAX) { status='gameover'; winner='draw'; }
+  else if (myAttempts>=MAX)               { status='gameover'; winner=eRole; }
 
-  const updates = {[`${myRole}/guesses`]:myGuesses};
-  if(status==='gameover'){updates.status='gameover';updates.winner=winner;}
-  else{updates.turn=enemyRole;updates.turnNumber=turnNum;}
-  await update(ref(db,`rooms/${roomId}`),updates);
+  const updates = { [`${myRole}/guesses`]: myG };
+  if (status==='gameover') { updates.status='gameover'; updates.winner=winner; }
+  else                     { updates.turn=eRole; updates.turnNumber=tNum; }
+
+  await update(ref(db, `rooms/${roomId}`), updates);
 };
 
-function showEnd(room) {
-  if(document.getElementById('win-screen').style.display==='block') return;
-  stopTimer();
-  hideAll();
-  document.getElementById('win-screen').style.display='block';
+// ─── END SCREEN ──────────────────────────────────────────
+function renderEndScreen(r) {
+  showOnly('win-screen');
+  clearLocal();
+  const eRole = myRole==='player1'?'player2':'player1';
+  const code  = r[eRole]?.code || '????';
+  document.getElementById('revealed-code').innerHTML =
+    code.split('').map(c=>`<div class="secret-slot">${c}</div>`).join('');
+
   const title = document.getElementById('win-title');
-  const msg = document.getElementById('win-msg');
-  const enemyRole = myRole==='player1'?'player2':'player1';
-  const revealCode = room[enemyRole]?.code||'????';
-  document.getElementById('revealed-code').innerHTML = revealCode.split('').map(c=>`<div class="secret-slot">${c}</div>`).join('');
-  if(room.winner==='draw'){title.textContent='DRAW';title.className='draw';msg.textContent='LES DEUX SYSTÈMES ONT RÉSISTÉ';}
-  else if(room.winner===myRole){title.textContent='BREACHED';title.className='win';msg.textContent='TU AS CRACKÉ LE CODE ENNEMI';glitch();}
-  else{title.textContent='DENIED';title.className='lose';msg.textContent='TON SYSTÈME A ÉTÉ COMPROMIS';}
-  setStatus('SESSION TERMINÉE',false);
-  showToast(room.winner===myRole?'VICTOIRE !':'DÉFAITE !',room.winner!==myRole);
-  clearSession();
+  const msg   = document.getElementById('win-msg');
+  if (r.winner==='draw')        { title.textContent='DRAW';     title.className='draw'; msg.textContent='LES DEUX SYSTÈMES ONT RÉSISTÉ'; }
+  else if (r.winner===myRole)   { title.textContent='BREACHED'; title.className='win';  msg.textContent='TU AS CRACKÉ LE CODE ENNEMI'; glitch(); }
+  else                          { title.textContent='DENIED';   title.className='lose'; msg.textContent='TON SYSTÈME A ÉTÉ COMPROMIS'; }
+
+  setStatus('SESSION TERMINÉE', false);
+  toast(r.winner===myRole ? 'VICTOIRE !' : 'DÉFAITE !', r.winner!==myRole);
 }
 
-window.resetGame = ()=>{
-  if(mainListener && roomId){
-    off(ref(db,`rooms/${roomId}`),'value',mainListener);
-    mainListener=null;
+// ─── RESET ───────────────────────────────────────────────
+function fullReset(deleteRoom=false) {
+  if (roomListener && roomId) {
+    off(ref(db, `rooms/${roomId}`), 'value', roomListener);
+    roomListener = null;
   }
-  if(roomId) try{remove(ref(db,`rooms/${roomId}`));}catch(e){}
-  clearSession();
-  myRole=null;roomId=null;myName='';enemyName='';myCode='';enemyCode='';
-  myAttempts=0;enemyAttempts=0;
-  stopTimer();
-  document.getElementById('my-history').innerHTML='';
-  document.getElementById('enemy-history').innerHTML='';
-  document.getElementById('confirm-code-btn').style.display='block';
-  document.getElementById('waiting-enemy-setup').style.display='none';
-  [...document.querySelectorAll('.code-char')].forEach(i=>{i.value='';i.disabled=false;});
+  if (deleteRoom && roomId) {
+    remove(ref(db, `rooms/${roomId}`)).catch(()=>{});
+  }
+  clearLocal(); stopTimer();
+  myRole=null; roomId=null; myName=''; enemyName=''; myCode=''; enemyCode='';
+  myAttempts=0; enemyAttempts=0;
+  document.getElementById('my-history').innerHTML    = '';
+  document.getElementById('enemy-history').innerHTML = '';
+  document.getElementById('confirm-code-btn').style.display      = 'block';
+  document.getElementById('waiting-enemy-setup').style.display   = 'none';
+  document.getElementById('join-form').style.display             = 'none';
+  [...document.querySelectorAll('.code-char')].forEach(i=>{ i.value=''; i.disabled=false; });
   ['my-hp-fill','enemy-hp-fill'].forEach(id=>{
-    document.getElementById(id).style.width='100%';
-    document.getElementById(id).className='hp-fill';
+    const el = document.getElementById(id);
+    el.style.width='100%'; el.className='hp-fill';
   });
-  document.getElementById('my-tries-left').textContent='10';
-  document.getElementById('enemy-tries-left').textContent='10';
-  document.getElementById('join-form').style.display='none';
-  showLobby();
-  setStatus('SYSTÈME EN LIGNE',true);
-};
+  document.getElementById('my-tries-left').textContent    = '10';
+  document.getElementById('enemy-tries-left').textContent = '10';
+  showOnly('lobby-screen');
+  setStatus('SYSTÈME EN LIGNE', true);
+}
 
-// Nettoyage vieilles rooms
+window.resetGame = () => fullReset(true);
+
+// ─── BOOT : vérifie si une session existe ────────────────
+async function boot() {
+  setStatus('CONNEXION...', false);
+
+  if (!db) {
+    setStatus('FIREBASE NON INITIALISÉ', false, true);
+    showOnly('lobby-screen');
+    return;
+  }
+
+  // Test connexion
+  try {
+    await get(ref(db, '.info/serverTimeOffset'));
+    setStatus('SYSTÈME EN LIGNE', true);
+  } catch(e) {
+    setStatus('ERREUR CONNEXION : ' + e.message, false, true);
+    showOnly('lobby-screen');
+    return;
+  }
+
+  // Restaure session si elle existe
+  const saved = loadLocal();
+  if (saved?.roomId) {
+    try {
+      const snap = await get(ref(db, `rooms/${saved.roomId}`));
+      if (snap.exists()) {
+        const r = snap.val();
+        // Vérifie que notre rôle est toujours valide
+        const myData = r[saved.myRole];
+        if (myData) {
+          myRole = saved.myRole;
+          roomId = saved.roomId;
+          myName = saved.myName;
+          myCode = saved.myCode || '';
+          // Récupère le code ennemi si la partie est commencée
+          const eRole = myRole==='player1'?'player2':'player1';
+          enemyCode = r[eRole]?.code || '';
+          enemyName = r[eRole]?.name || '';
+          toast('SESSION RESTAURÉE');
+          setStatus(`SESSION RESTAURÉE — ${roomId}`, true);
+          attachRoomListener();
+          return;
+        }
+      }
+    } catch(e) {
+      console.warn('Restore failed:', e);
+    }
+    clearLocal();
+  }
+
+  showOnly('lobby-screen');
+}
+
+// Nettoyage rooms > 2h
 setTimeout(async()=>{
-  try{
-    const s=await get(ref(db,'rooms'));
-    if(!s.exists()) return;
-    const now=Date.now();
-    s.forEach(c=>{if(c.val().createdAt&&now-c.val().createdAt>7200000)remove(ref(db,`rooms/${c.key}`));});
-  }catch(e){}
-},3000);
+  if (!db) return;
+  try {
+    const s = await get(ref(db,'rooms'));
+    if (!s.exists()) return;
+    const now = Date.now();
+    s.forEach(c => {
+      if (c.val().createdAt && now - c.val().createdAt > 7200000)
+        remove(ref(db, `rooms/${c.key}`)).catch(()=>{});
+    });
+  } catch(e) {}
+}, 4000);
 
-// Démarrage
-init();
+boot();
 </script>
 </body>
 </html>
