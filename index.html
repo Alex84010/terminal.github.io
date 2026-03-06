@@ -748,7 +748,7 @@ async function boot() {
 
   // Test connexion
   try {
-    await get(ref(db, '.info/serverTimeOffset'));
+    await get(ref(db, 'rooms'));
     setStatus('SYSTÈME EN LIGNE', true);
   } catch(e) {
     setStatus('ERREUR CONNEXION : ' + e.message, false, true);
